@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # Blockchain Explorer for Quorum and Ethereum
 
 ![alt text](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Blocks.png "Epirus Free")
