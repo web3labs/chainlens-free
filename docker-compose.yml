@@ -15,8 +15,6 @@ services:
 
   mongodb:
     image: mongo:latest
-    volumes: 
-      - /data/db:/data/db
     ports:
       - 27017:27017
     entrypoint: mongod --smallfiles --logpath=/dev/null --bind_ip "0.0.0.0"
