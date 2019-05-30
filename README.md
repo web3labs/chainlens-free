@@ -1,5 +1,4 @@
-# Epirus - Quorum and Ethereum Smart Contract Registry
-## Blockchain explorer for Ethereum based networks
+# Quorum and Ethereum Free Blockchain Explorer
 
 ![alt text](https://raw.githubusercontent.com/blk-io/epirus-free/master/docs/blocks.png "Epirus Free")
 
