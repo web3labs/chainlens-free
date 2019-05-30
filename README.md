@@ -1,7 +1,7 @@
-# Quorum and Ethereum Free Blockchain Explorer
+<<<<<<< Updated upstream
+# Blockchain Explorer for Quorum and Ethereum
 
-![alt text](https://raw.githubusercontent.com/blk-io/epirus-free/master/docs/blocks.png "Epirus Free")
-
+![alt text](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Blocks.png "Epirus Free")
 
 ## Introduction
 
@@ -19,7 +19,7 @@ Append the `-d` argument to run the containers in the backgroud
 
 You will be able to access the Explorer UI via:
 
-* http://localhost:5000
+* http://localhost/
 
 To stop the containers use:
 
@@ -32,14 +32,30 @@ To connect to new network you should remove the volumes associated with the old 
 ```bash
 docker-compose down -v
 ```
- 
-### Local Quorum Networks
 
-If you need to run a Quorum network locally, we recommend you use the following [4-node Quorum Docker image](https://github.com/blk-io/crux#4-node-quorum-network-with-crux), you can then start the Explorer via:
+## Tokens and contract metadata
 
-```bash
-NODE_ENDPOINT=http://localhost:22001 docker-compose up
-```
+![Tokens screen](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Tokens.png)
+
+This is a free version of our Epirus Blockchain Explorer. For additional features such as full tokens support, 
+and contract metadata upload (so all transaction and events are decoded), please use our offering available on the 
+[Azure Marketplace](https://web3labs.com/azure-offer).
+
+![Azure offering](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Azure-offer.png)
+
+We can also provide hosted Blockchain Explorer instances - these can be hosted within your cloud subscription or hosted by us.
+
+Some of the features include:
+
+- SSO authentication (Active Directory, SAML, Okta, etc)
+- Dedicated database
+- Data encryption at rest and in transit
+- Continuous backup and point in time data recovery
+- Full access to backups
+- Tableau integration support 
+
+For further information visit our [website](https://www.web3labs.com) or email <hi@web3labs.com>.
+>>>>>>> Stashed changes
 
 ## Limitations
 
