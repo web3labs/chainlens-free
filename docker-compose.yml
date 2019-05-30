@@ -1,0 +1,42 @@
+version: "3"
+services:
+  api:
+    image: web3labs/epirus-free-api:latest
+    ports:
+      - 8081:8081
+    environment:
+      - ENABLE_PRIVATE_QUORUM=enabled
+      - EXPLORER_PORT=8081
+      - NODE_ENDPOINT=${NODE_ENDPOINT}
+      - MONGO_CLIENT_URI=mongodb://mongodb:27017
+      - MONGO_DB_NAME=epirus
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    volumes: 
+      - /data/db:/data/db
+    ports:
+      - 27017:27017
+    entrypoint: mongod --smallfiles --logpath=/dev/null --bind_ip "0.0.0.0"
+
+  web:
+    image: web3labs/epirus-free-web:latest
+    ports:
+      - 3000:3000
+    environment:
+      - API_URL=/api/
+    depends_on:
+      - api
+
+  nginx: 
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./5xx.html:/www/error_pages/5xx.html
+    ports:
+      - 80:80
+    depends_on:
+     - api
+     - web
