@@ -54,7 +54,6 @@ Some of the features include:
 - Tableau integration support 
 
 For further information visit our [website](https://www.web3labs.com) or email <hi@web3labs.com>.
->>>>>>> Stashed changes
 
 ## Limitations
 
