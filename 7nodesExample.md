@@ -21,10 +21,17 @@ Get Quorum 7 node example
 
 Navigate to the directory where the Quorum was cloned and open the `docker-compose.yml` file.
 
-Add the following property to `quorum-examples-net ` in the networks settings:
+Add the name property to `quorum-examples-net ` in the networks settings so it looks like this:
 
 ```json
-name: quorum
+networks:
+  quorum-examples-net:
+    name: quorum
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.239.0/24
 ```
 
 #### Starting the services 
