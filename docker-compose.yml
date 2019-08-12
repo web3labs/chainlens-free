@@ -1,4 +1,4 @@
-version: "3"
+version: "3.6"
 services:
   api:
     image: web3labs/epirus-free-api:latest
@@ -12,12 +12,16 @@ services:
       - MONGO_DB_NAME=epirus
     depends_on:
       - mongodb
+    networks:
+      - epirus
 
   mongodb:
     image: mongo:latest
     ports:
       - 27017:27017
     entrypoint: mongod --smallfiles --logpath=/dev/null --bind_ip "0.0.0.0"
+    networks:
+      - epirus
 
   web:
     image: web3labs/epirus-free-web:latest
@@ -27,7 +31,8 @@ services:
       - API_URL=/api/
     depends_on:
       - api
-
+    networks:
+      - epirus
   nginx: 
     image: nginx:latest
     volumes:
@@ -38,3 +43,13 @@ services:
     depends_on:
      - api
      - web
+    networks:
+      - epirus
+  networks:
+    epirus:
+      name: quorum
+      driver: bridge
+      ipam:
+        driver: default
+        config:
+          - subnet: 172.16.239.0/24
