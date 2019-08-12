@@ -19,7 +19,7 @@ Get Quorum 7 node example
 
 #### Set up Quorum
 
-Navigate to the directory where the 7 Node Example was cloned and open the `docker-compose.yml` file.
+Navigate to the directory where the Quorum was cloned and open the `docker-compose.yml` file.
 
 Add the following property to `quorum-examples-net ` in the networks settings:
 
@@ -31,7 +31,7 @@ name: quorum
 
 - Quorum 7 Node Example
 
-Open the terminal and navigate to the directory where Quorum 7 Node Example was cloned. Once you are in the same directory as the docker-compose file execute the following line in your terminal:
+Open the terminal and navigate to the directory where Quorum was cloned. Once you are in the same directory as the docker-compose file execute the following line in your terminal:
 
 `docker-compose up -d`
 
