@@ -45,11 +45,12 @@ services:
      - web
     networks:
       - epirus
-  networks:
-    epirus:
-      name: quorum
-      driver: bridge
-      ipam:
-        driver: default
-        config:
-          - subnet: 172.16.239.0/24
+  
+networks:
+  epirus:
+    name: epirus
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.239.0/24
