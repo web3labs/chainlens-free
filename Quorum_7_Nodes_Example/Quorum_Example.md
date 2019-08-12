@@ -66,7 +66,7 @@ Navigate to [localhost](http://localhost) and you should see the following:
 
 After a few minutes Epirus should display the following information:
 
-![img](images/Blocks.png)
+![img](../images/Blocks.png)
 
 Epirus has successfully connected to the Quorum Blockchain.
 
