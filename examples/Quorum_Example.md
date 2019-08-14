@@ -16,6 +16,24 @@ Get Quorum 7 node example
 
 > git clone https://github.com/jpmorganchase/quorum-examples
 
+#### Set up Epirus
+
+Navigate to the directory where the Epirus was cloned and open the `docker-compose.yml` file.
+
+Change the networks name property to `quorum-examples-net ` in the networks settings so it looks like this:
+
+```json
+networks:
+  epirus:
+    name: quorum-examples-net
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.239.0/24
+```
+
+
 
 #### Starting the services 
 
