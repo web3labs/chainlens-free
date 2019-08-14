@@ -8,7 +8,6 @@ Get Quorum 7 node example
 git clone https://github.com/jpmorganchase/quorum-examples
 cd quorum-examples
 docker-compose up
-
 ```
 
 You should see the following happening in the terminal window.
@@ -24,7 +23,7 @@ cd epirus-free
 
 You need to make some minor changes to the `docker-compose.yml` file so that epirus can connect a running node.
 
-Change the networks `name` property from `epirus` to `quorum-examples-net ` in the networks settings so it looks like this:
+Change the networks `name` property from `epirus` to `quorum-examples-net` in the networks settings so it looks like this:
 
 ```json
 networks:
