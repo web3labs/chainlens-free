@@ -23,7 +23,11 @@ cd epirus-free
 
 You need to make some minor changes to the `docker-compose.yml` file so that epirus can connect a running node.
 
-Change the networks `name` property from `epirus` to `quorum-examples-net` in the networks settings so it looks like this:
+Change the networks `name` property from `epirus-net` to `quorum-examples-net` in the networks settings:
+
+`sed -i 's/name: epirus-net/name: quorum-examples-net/g' docker-compose.yml`
+
+The networks property should now looks like this:
 
 ```json
 networks:
