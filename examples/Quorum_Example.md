@@ -63,7 +63,7 @@ After a few minutes Epirus should display the following information:
 
 ![img](../images/Blocks.png)
 
-Epirus has successfully connected to a Quorum node and is ingesting data.
+Epirus has successfully connected to a Quorum node and is ingesting data. Depenging on your machine specs this can take a long time to get to this point (20 mins on a macbook air).
 
 To close Epirus or Quorum you can execute the following line in your terminal:
 
