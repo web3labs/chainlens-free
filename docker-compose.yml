@@ -6,7 +6,6 @@ services:
       - 8081:8081
     environment:
       - ENABLE_PRIVATE_QUORUM=enabled
-      - EXPLORER_PORT=8081
       - NODE_ENDPOINT=${NODE_ENDPOINT}
       - MONGO_CLIENT_URI=mongodb://mongodb:27017
       - MONGO_DB_NAME=epirus
@@ -48,7 +47,7 @@ services:
   
 networks:
   epirus:
-    name: epirus
+    name: epirus-net
     driver: bridge
     ipam:
       driver: default
