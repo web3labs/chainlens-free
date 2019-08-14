@@ -32,6 +32,9 @@ To connect to new network you should remove the volumes associated with the old 
 docker-compose down -v
 ```
 
+To run the Quroum 7 node example with epirus free [follow these instructions](blob/master/examples/Quorum_Example.md). 
+
+
 ## Tokens and contract metadata
 
 ![Tokens screen](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Tokens.png)
