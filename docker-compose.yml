@@ -48,7 +48,7 @@ services:
   
 networks:
   epirus:
-    name: quorum-examples-net
+    name: epirus
     driver: bridge
     ipam:
       driver: default
