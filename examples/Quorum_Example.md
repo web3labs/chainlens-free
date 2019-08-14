@@ -2,25 +2,29 @@
 
 ### Connecting Epirus to Quorum 7 Node Example 
 
-##### Requirements 
-
-1. Docker Compose
-
-
-Get Epirus 
-
->git clone https://github.com/blk-io/epirus-free.git
-
-
 Get Quorum 7 node example 
 
-> git clone https://github.com/jpmorganchase/quorum-examples
+```
+git clone https://github.com/jpmorganchase/quorum-examples
+cd quorum-examples
+docker-compose up
 
-#### Set up Epirus
+```
 
-Navigate to the directory where the Epirus was cloned and open the `docker-compose.yml` file.
+You should see the following happening in the terminal window.
 
-Change the networks name property to `quorum-examples-net ` in the networks settings so it looks like this:
+![image](images/7NodesDocker.png)
+
+#### Set up Epirus-Free
+
+```
+git clone https://github.com/blk-io/epirus-free.git
+cd epirus-free
+```
+
+You need to make some minor changes to the `docker-compose.yml` file so that epirus can connect a running node.
+
+Change the networks `name` property from `epirus` to `quorum-examples-net ` in the networks settings so it looks like this:
 
 ```json
 networks:
@@ -33,35 +37,22 @@ networks:
         - subnet: 172.16.239.0/24
 ```
 
+Now you can start epirus with the following command. 
 
+`NODE_ENDPOINT=http://172.16.239.11:8545/ docker-compose up`
 
-#### Starting the services 
-
-- Quorum 7 Node Example
-
-Open the terminal and navigate to the directory where Quorum was cloned. Once you are in the same directory as the docker-compose file execute the following line in your terminal:
-
-`docker-compose up -d`
-
-You should see the following happening in the terminal window.
-
-![image](images/7NodesDocker.png)
-
-Open the terminal and navigate to the directory where Epirus was cloned. Once you are in the same directory as the docker-compose file execute the following line in your terminal:
-
-`NODE_ENDPOINT=http://172.16.239.11:8545/ docker-compose up -d`
+> Note: we are connecting to node 1 - you will only see private transactions for that node.
 
 You should see the following happening in the terminal window. This means that everything has started successfully.
 
-
 ![img](images/EpirusDocker.png)
 
-> Note: If you want to check the progress in more detail you can execute the following line in your terminal after the docker setup: 
+> Note: The logs are verbose and you will see various errors before all services are started. The important logs to look at are on the api. You can access them with the following
 > 
 >`docker-compose logs -f api`
 
 
-Navigate to [localhost](http://localhost) and you should see the following:
+Navigate to [localhost](http://localhost) and you should see the loading page:
 
 ![image](images/Loading.png)
 
@@ -69,13 +60,12 @@ After a few minutes Epirus should display the following information:
 
 ![img](../images/Blocks.png)
 
-Epirus has successfully connected to the Quorum Blockchain.
+Epirus has successfully connected to a Quorum node and is ingesting data.
 
 To close Epirus or Quorum you can execute the following line in your terminal:
 
 `docker-compose down` 
 
-Make sure you are in the same directory as the compose file.
 
 #### Help & Additional Information
 
