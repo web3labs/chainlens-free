@@ -21,28 +21,17 @@ git clone https://github.com/blk-io/epirus-free.git
 cd epirus-free
 ```
 
-You need to make some minor changes to the `docker-compose.yml` file so that epirus can connect to a running node.
+In order to start epirus you need to run the following command:
 
-Change the networks `name` property from `epirus-net` to `quorum-examples-net` in the networks settings:
+`NODE_ENDPOINT=http://:quorum-examples_node1_1:8545 docker-compose -f docker-compose.yml -f epirus-extensions/docker-compose-quorum.yml up`
 
-`sed -i 's/name: epirus-net/name: quorum-examples-net/g' docker-compose.yml`
+The command above does two things :
+* It sets up the node endpoint 
+* Tells docker to run by using the two docker compose files provided.
 
-The networks property should now looks like this:
+The first docker-compose file in the command is the contains all the services required for epirus.
 
-```json
-networks:
-  epirus:
-    name: quorum-examples-net
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.16.239.0/24
-```
-
-Now you can start epirus with the following command. 
-
-`NODE_ENDPOINT=http://172.16.239.11:8545/ docker-compose up`
+The second file named docker-compose-quorum contains the network settings required to start epirus on the same network as quorum.
 
 > Note: we are connecting to node 1 - you will only see private transactions for that node.
 

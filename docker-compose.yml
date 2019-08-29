@@ -32,7 +32,7 @@ services:
       - api
     networks:
       - epirus
-  nginx: 
+  nginx:
     image: nginx:latest
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
@@ -40,11 +40,11 @@ services:
     ports:
       - 80:80
     depends_on:
-     - api
-     - web
+      - api
+      - web
     networks:
       - epirus
-  
+
 networks:
   epirus:
     name: epirus-net

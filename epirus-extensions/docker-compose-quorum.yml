@@ -1,0 +1,10 @@
+version: "3.6"
+
+networks:
+  epirus:
+    name: quorum-examples-net
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.239.0/24
