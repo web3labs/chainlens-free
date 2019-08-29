@@ -1,0 +1,10 @@
+version: "3.6"
+
+networks:
+  epirus:
+    name: privacy_default
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
