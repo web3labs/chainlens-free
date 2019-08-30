@@ -23,7 +23,7 @@ cd epirus-free
 
 In order to start epirus you need to run the following command:
 
-`NODE_ENDPOINT=http://:quorum-examples_node1_1:8545 docker-compose -f docker-compose.yml -f epirus-extensions/docker-compose-quorum.yml up`
+`NODE_ENDPOINT=http://quorum-examples_node1_1:8545 docker-compose -f docker-compose.yml -f epirus-extensions/docker-compose-quorum.yml up`
 
 The command above does two things :
 * It sets up the node endpoint 
