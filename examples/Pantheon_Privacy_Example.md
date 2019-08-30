@@ -26,7 +26,7 @@ cd epirus-free
 
 In order to start epirus you need to run the following command:
 
-`NODE_ENDPOINT=http://:privacy_node1_1:8545 docker-compose -f docker-compose.yml -f epirus-extensions/docker-compose-pantheon.yml up`
+`NODE_ENDPOINT=http://privacy_node1_1:8545 docker-compose -f docker-compose.yml -f epirus-extensions/docker-compose-pantheon.yml up`
 
 The command above does two things :
 * It sets up the node endpoint 
