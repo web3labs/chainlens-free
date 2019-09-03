@@ -5,7 +5,7 @@
 ## Introduction
 
 This dockerized environment is designed for viewing private 
-[Quorum](https://github.com/jpmorganchase/quorum) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
+[Quorum](https://github.com/jpmorganchase/quorum), [Pantheon](https://github.com/PegaSysEng/pantheon-quickstart/tree/master/privacy) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
 
 ## Usage
 
@@ -32,7 +32,12 @@ To connect to new network you should remove the volumes associated with the old 
 docker-compose down -v
 ```
 
+## Quorum & Pantheon 
+
 To run the Quroum 7 node example with epirus free [follow these instructions](examples/Quorum_Example.md). 
+
+
+To run the Pantheon-quickstart privacy network example [follow these instructions](examples/Pantheon_Privacy_Example.md).
 
 
 ## Tokens and contract metadata
