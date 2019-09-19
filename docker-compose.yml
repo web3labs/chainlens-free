@@ -2,8 +2,6 @@ version: "3.6"
 services:
   api:
     image: web3labs/epirus-free-api:latest
-    ports:
-      - 8081:8081
     environment:
       - ENABLE_PRIVATE_QUORUM=enabled
       - NODE_ENDPOINT=${NODE_ENDPOINT}
@@ -24,14 +22,13 @@ services:
 
   web:
     image: web3labs/epirus-free-web:latest
-    ports:
-      - 3000:3000
     environment:
-      - API_URL=/api/
+      - API_URL=/api
     depends_on:
       - api
     networks:
       - epirus
+  
   nginx:
     image: nginx:latest
     volumes:
