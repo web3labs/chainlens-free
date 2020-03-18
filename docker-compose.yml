@@ -3,9 +3,9 @@ services:
   api:
     image: web3labs/epirus-free-api:latest
     environment:
-      - ENABLE_PRIVATE_QUORUM=enabled
       - NODE_ENDPOINT=${NODE_ENDPOINT}
       - MONGO_CLIENT_URI=mongodb://mongodb:27017
+      - REINDEX_ENDPOINT=http://ingestion/reindex/
       - MONGO_DB_NAME=epirus
     depends_on:
       - mongodb
@@ -29,6 +29,17 @@ services:
     networks:
       - epirus
   
+  ingestion:
+    image: web3labs/epirus-free-ingestion:latest
+    environment:
+      - NODE_ENDPOINT=${NODE_ENDPOINT}
+      - MONGO_CLIENT_URI=mongodb://mongodb:27017
+      - MONGO_DB_NAME=epirus
+    depends_on:
+      - mongodb
+    networks:
+      - epirus
+      
   nginx:
     image: nginx:latest
     volumes:
