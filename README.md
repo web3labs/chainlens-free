@@ -64,7 +64,7 @@ Some of the features include:
 - Full access to backups
 - Tableau integration support 
 
-For further information visit our [website](https://www.web3labs.com) or email <hi@web3labs.com>.
+For further information visit our [website](https://www.web3labs.com) or email <support@web3labs.com>.
 
 ## Limitations
 
