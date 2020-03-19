@@ -12,6 +12,7 @@ This dockerized environment is designed for viewing private
 Clone the repo, navigate to the cloned directory and run the instance with:
 
 ```bash
+docker-compose pull
 NODE_ENDPOINT=http://<node_endpoint> docker-compose up
 ```
 
