@@ -1,4 +1,4 @@
-# Epirus Blockchain Explorer for Quorum and Ethereum
+# Blockchain Explorer for Besu, Quorum and Ethereum
 
 ![alt text](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Contracts.png "Epirus Free")
 
