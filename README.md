@@ -16,7 +16,7 @@ docker-compose pull
 NODE_ENDPOINT=http://<node_endpoint> docker-compose up
 ```
 
-Note that if setting `NODE_ENDPOINT` to a local Ethereum instance, you may need to use the IP address associated with the Docker bridged interface, often denoted by `docker0`.
+Note that if setting `NODE_ENDPOINT` to a local Ethereum instance, you may need to use the IP address associated with the Docker bridged interface, often denoted by `docker0`. On Linux, the bridged adapter should be 172.16.239.1, as denoted in docker-compose.yml. On Linux, to connect to a local node, start with the command NODE_ENDPOINT=http://172.16.239.1:8545 docker-compose up. On MacOS, a platform sepcific command is required due to limitations around the Docker network stack on MacOS. This is as follows: NODE_ENDPOINT=http://host.docker.internal:8545 docker-compose up. Node that in both cases, your local instance of geth must be started with --rpcaddr 0.0.0.0 and --rpcvhosts="*", or Epirus will be unable to access it.
 
 Append the `-d` argument to run the containers in the backgroud
 
