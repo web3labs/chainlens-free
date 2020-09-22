@@ -24,13 +24,15 @@ On Linux, the bridged adapter should be 172.16.239.1, as denoted in docker-compo
 NODE_ENDPOINT=http://172.16.239.1:8545 docker-compose up
 ```
 
-On MacOS, a platform sepcific command is required due to limitations around the Docker network stack on MacOS. This is as follows: 
+On MacOS and Windows, a platform sepcific command is required due to limitations around the Docker network stack on MacOS. This is as follows: 
 
 ```bash
 NODE_ENDPOINT=http://host.docker.internal:8545 docker-compose up
 ```
 
 Note that in both cases, your local instance of geth must be started with `--rpcaddr 0.0.0.0` and `--rpcvhosts="*"`, or Epirus will be unable to access it.
+
+Also note that on Windows Epirus may take a long time to come up (sometimes up to 20 minutes) due to Windows filesystem performance issues with Linux VMs.
 
 Append the `-d` argument to run the containers in the backgroud
 
