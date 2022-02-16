@@ -89,4 +89,4 @@ For further information visit our [website](https://www.web3labs.com) or email <
 
 ## License
 
-Epirus is free for non-commercial use and evaluation purposes only, for further details refer to the [LICENSE](LICENSE). To speak to use about commercial use you can email us via hi <at> web3labs.com or submit an enquiry [here](https://pages.web3labs.com/epirus-enterprise).
+Epirus is free for non-commercial use and evaluation purposes only, for further details refer to the [LICENSE](LICENSE). To speak to use about commercial use you can email us via `hi <at> web3labs.com` or submit an enquiry [here](https://pages.web3labs.com/epirus-enterprise).
