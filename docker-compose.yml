@@ -7,16 +7,18 @@ services:
       - MONGO_CLIENT_URI=mongodb://mongodb:27017
       - REINDEX_ENDPOINT=http://ingestion/reindex/
       - MONGO_DB_NAME=epirus
+      - MONGO_CREATE_INDICES=true
     depends_on:
       - mongodb
     networks:
       - epirus
-
+  
   mongodb:
-    image: mongo:latest
-    ports:
-      - 27017:27017
-    entrypoint: mongod --logpath=/dev/null --bind_ip "0.0.0.0"
+    image: mongo:5.0.8
+    environment:
+      - COMPOSE_HTTP_TIMEOUT=900
+      - DOCKER_CLIENT_TIMEOUT=900
+    entrypoint: mongod --bind_ip "0.0.0.0"
     networks:
       - epirus
 
