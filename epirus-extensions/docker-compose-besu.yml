@@ -1,0 +1,12 @@
+version: "3.6"
+
+services:
+  besu:
+    container_name: besu-node
+    image: hyperledger/besu:latest
+    volumes:
+      - ./besu/testnode:/var/lib/besu
+
+    entrypoint: besu --miner-enabled --miner-coinbase fe3b557e8fb62b89f4916b721be55ceb828dbd73  --rpc-http-host=0.0.0.0 --rpc-http-enabled --host-whitelist='*' --network=dev --data-path=/var/lib/besu
+    networks:
+      - epirus
