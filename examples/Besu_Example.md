@@ -11,6 +11,10 @@ In order to start epirus you need to run the following command:
 
 `NODE_ENDPOINT=http://besu-node:8545 docker-compose -f docker-compose.yml -f epirus-extensions/docker-compose-besu.yml up`
 
+To run with [quorum-dev-quickstart](https://besu.hyperledger.org/en/stable/private-networks/tutorials/quickstart/#prerequisites) example run the following command:
+
+`NODE_ENDPOINT=http://rpcnode:8545 docker-compose -f docker-compose.yml -f epirus-extensions/docker-compose-quorum-dev-quickstart.yml up`
+
 The command above does two things :
 * It sets up the node endpoint 
 * Tells docker to run by using the two docker compose files provided.
