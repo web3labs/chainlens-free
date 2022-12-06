@@ -7,7 +7,7 @@
 This dockerized environment is designed for viewing public and private Ethereum networks. It supports  
 [Quorum](https://github.com/ConsenSys/quorum), [Hyperledger Besu](https://besu.hyperledger.org/en/stable/) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
 
-Instructions for Docker are below, instructions for Kubernetes are available [here](./k8s/README.md).
+Instructions for Docker are below, instructions for Kubernetes are available [here](k8s/README.md).
 
 ## Usage
 
