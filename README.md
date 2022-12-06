@@ -4,8 +4,10 @@
 
 ## Introduction
 
-This dockerized environment is designed for viewing private 
-[Quorum](https://github.com/jpmorganchase/quorum), [Pantheon](https://github.com/PegaSysEng/pantheon-quickstart/tree/master/privacy) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
+This dockerized environment is designed for viewing public and private Ethereum networks. It supports  
+[Quorum](https://github.com/ConsenSys/quorum), [Hyperledger Besu](https://besu.hyperledger.org/en/stable/) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
+
+Instructions for Docker are below, instructions for Kubernetes are available [here](./k8s/README.md).
 
 ## Usage
 
@@ -52,7 +54,7 @@ To connect to new network you should remove the volumes associated with the old 
 docker-compose down -v
 ```
 
-## Quorum & Pantheon 
+## Quorum & Hyperledger Besu 
 
 To run the Quroum 7 node example with epirus free [follow these instructions](examples/Quorum_Example.md). 
 
