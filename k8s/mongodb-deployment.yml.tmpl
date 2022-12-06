@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: Epirus
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mongodb
+  name: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: mongodb
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: Epirus
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/epirus-net: "true"
+        io.kompose.service: mongodb
+    spec:
+      containers:
+        - command:
+            - mongod
+            - --bind_ip
+            - 0.0.0.0
+          env:
+            - name: COMPOSE_HTTP_TIMEOUT
+              value: "900"
+            - name: DOCKER_CLIENT_TIMEOUT
+              value: "900"
+          image: mongo:5.0.8
+          name: mongodb
+          resources: {}
+      restartPolicy: Always
+status: {}
