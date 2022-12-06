@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: Epirus
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: api
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: api
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: Epirus convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/epirus-net: "true"
+        io.kompose.service: api
+    spec:
+      containers:
+        - env:
+            - name: MONGO_CLIENT_URI
+              value: mongodb://IP:27017
+            - name: MONGO_CREATE_INDICES
+              value: "true"
+            - name: MONGO_DB_NAME
+              value: epirus
+            - name: NODE_ENDPOINT
+              value: NODEENDPOINT
+            - name: REINDEX_ENDPOINT
+              value: http://ingestion/reindex/
+          image: web3labs/epirus-free-api:latest
+          name: api
+          resources: {}
+      restartPolicy: Always
+status: {}
