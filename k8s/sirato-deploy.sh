@@ -11,6 +11,7 @@ else
 fi
 
 kubectl create namespace vmbc-epirus
+
 NAMESPACE="vmbc-epirus"
 
 cp epirus-net-networkpolicy.yml.tmpl epirus-net-networkpolicy.yml
@@ -23,14 +24,15 @@ kubectl apply -f epirus-net-networkpolicy.yml,mongodb-deployment.yml,web-deploym
 echo fetching mongodb IP.....
 sleep 60
 name=$(kubectl get pods | grep mongo | awk -F '1/1' '{print $1}')
-ip=$(kubectl describe pod $name | awk -F 'IP:               ' '{print $2}')
+ip=$(kubectl get pod $name  -o json |jq .status.podIP | tr -d '"')
 echo $name
 echo $ip
 latest=$(echo $ip)
 sed -i "s|IP|$latest|g" "ingestion-deployment.yml"
 sed -i "s|IP|$latest|g" "api-deployment.yml"
-
 sed -i "s|NODEENDPOINT|$endpoint|g" "ingestion-deployment.yml"
 sed -i "s|NODEENDPOINT|$endpoint|g" "api-deployment.yml"
 
 kubectl apply -f api-deployment.yml,ingestion-deployment.yml
+kubectl expose deployment web --port=3000 --target-port=3000 --name=web-service --type=LoadBalancer
+kubectl expose deployment api --port=8090 --target-port=8090 --name=api-service --type=LoadBalancer

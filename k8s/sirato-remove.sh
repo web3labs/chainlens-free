@@ -21,4 +21,7 @@ kubectl delete namespace vmbc-epirus
 echo ---------------- Removing tmp files ----------------
 rm -rvf epirus-net-networkpolicy.yml mongodb-deployment.yml web-deployment.yml api-deployment.yml ingestion-deployment.yml
 
+echo ---------------- Removing web service api-service ----------------
+kubectl delete svc web-service api-service
+
 echo ========================== DONE ===========================
