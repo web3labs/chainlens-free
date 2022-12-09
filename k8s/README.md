@@ -26,10 +26,10 @@ On macOS, ensure minikube ingress is enabled:
 minikube addons enable ingress
 ```
 
+```
 '''
 minikube service sirato-proxy
 '''
-
 ❯ minikube service sirato-proxy
 |-----------|--------------|-------------|---------------------------|
 | NAMESPACE |     NAME     | TARGET PORT |            URL            |
@@ -43,7 +43,7 @@ minikube service sirato-proxy
 | default   | sirato-proxy |             | http://127.0.0.1:56439 |
 |-----------|--------------|-------------|------------------------|
 🎉  Opening service default/sirato-proxy in default browser...
-
+```
 Point your browser to the provided URL.
 
 ## Stopping Sirato
