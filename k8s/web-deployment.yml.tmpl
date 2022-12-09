@@ -1,35 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: Epirus
-    kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
   labels:
-    io.kompose.service: web
-  name: web
+    run: sirato-web
+  name: sirato-web
+spec:
+  selector:
+    app: sirato-web
+  type: NodePort
+  ports:
+     - port: 3000
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: web
+      run: web
   strategy: {}
   template:
     metadata:
-      annotations:
-        kompose.cmd: Epirus
-        kompose.version: 1.26.0 (40646f47)
-      creationTimestamp: null
       labels:
-        io.kompose.network/epirus-net: "true"
-        io.kompose.service: web
+        run: web
     spec:
       containers:
+        name: sirato-web
         - env:
-            - name: API_URL
+            - name: http://sirato-api:8090/
               value: /api
           image: web3labs/epirus-free-web:latest
-          name: web
+          ports:
+            - containerPort: 3000
           resources: {}
       restartPolicy: Always
-status: {}
