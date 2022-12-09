@@ -1,43 +1,43 @@
-apiVersion: apps/v1
+apiVersion: sirato/v1
+kind: Service
+metadata:
+  name: sirato-api
+  labels:
+    run: sirato-api
+spec:
+  ports:
+  - port: 8090
+    protocol: TCP
+  selector:
+    run: sirato-api
+
+apiVersion: sirato/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: Epirus
-    kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: api
-  name: api
+  name: sirato-api-deployment
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: api
-  strategy: {}
+      run: sirato-api
+  replicas: 1
   template:
     metadata:
-      annotations:
-        kompose.cmd: Epirus convert
-        kompose.version: 1.26.0 (40646f47)
-      creationTimestamp: null
       labels:
-        io.kompose.network/epirus-net: "true"
-        io.kompose.service: api
+        run: sirato-api
     spec:
       containers:
-        - env:
-            - name: MONGO_CLIENT_URI
-              value: mongodb://IP:27017
-            - name: MONGO_CREATE_INDICES
-              value: "true"
-            - name: MONGO_DB_NAME
-              value: epirus
-            - name: NODE_ENDPOINT
-              value: NODEENDPOINT
-            - name: REINDEX_ENDPOINT
-              value: http://ingestion/reindex/
-          image: web3labs/epirus-free-api:latest
-          name: api
-          resources: {}
-      restartPolicy: Always
-status: {}
+      - name: sirato-api
+        image: registry.gitlab.com/web3labs/epirus/explorer/api
+        ports:
+        - containerPort: 8090
+        env:
+          - name: MONGO_CLIENT_URI
+          value: "mongodb://sirato-db:27017"
+          - name: MONGO_DB_NAME
+          value: "epirus"
+          - name: MONGO_CREATE_INDICES
+          value: "true"
+          - name: NODE_ENDPOINT
+            value: "http://ethrpc1.vmbc-client1.svc.cluster.local:8545"
+          - name: REINDEX_ENDPOINT
+            value: http://sirato-ingestion/reindex/

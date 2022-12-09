@@ -1,39 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: Epirus
-    kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
   labels:
-    io.kompose.service: ingestion
-  name: ingestion
+    run: sirato-ingestion
+  name: sirato-ingestion
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: ingestion
+      run: sirato-ingestion
   strategy: {}
   template:
     metadata:
-      annotations:
-        kompose.cmd: Epirus
-        kompose.version: 1.26.0 (40646f47)
-      creationTimestamp: null
       labels:
-        io.kompose.network/epirus-net: "true"
-        io.kompose.service: ingestion
+        run: sirato-ingestion
     spec:
       containers:
         - env:
             - name: MONGO_CLIENT_URI
-              value: mongodb://IP:27017
+              value: mongodb://sirato-db:27017
             - name: MONGO_DB_NAME
               value: epirus
             - name: NODE_ENDPOINT
-              value: NODEENDPOINT
+              value: "http://ethrpc1.vmbc-client1.svc.cluster.local:8545"
           image: web3labs/epirus-free-ingestion:latest
           name: ingestion
           resources: {}
       restartPolicy: Always
-status: {}
