@@ -7,7 +7,7 @@ You can use the script contained in this directory to generate and run Sirato us
 If you are running locally, you should first start minikube, then run the following script:
 
 ```
-./sirato-launch.sh <hostname>:<rpc-endpoint>
+./sirato-launch.sh http//:<rpc-endpoint>
 ```
 
 You can verify the status of Sirato by running:
