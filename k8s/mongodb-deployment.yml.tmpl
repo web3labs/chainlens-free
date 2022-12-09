@@ -1,31 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    run: mongodb
-  name: mongodb
+  name: sirato-db-deployment
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      run: mongodb
-  strategy: {}
+      run: sirato-db
+  replicas: 1
   template:
     metadata:
       labels:
-        run: mongodb
+        run: sirato-db
     spec:
       containers:
-        - command:
-            - mongod
-            - --bind_ip
-            - 0.0.0.0     
-          env:
-            - name: COMPOSE_HTTP_TIMEOUT
-              value: "900"
-            - name: DOCKER_CLIENT_TIMEOUT
-              value: "900"
-          image: mongo:5.0.8
-          name: mongodb
-          resources: {}
-      restartPolicy: Always
+      - name: sirato-db
+        image: mongo:5.0.8
+        ports:
+        - containerPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sirato-db
+  labels:
+    run: sirato-db
+spec:
+  ports:
+  - port: 27017
+    protocol: TCP
+  selector:
+    run: sirato-db

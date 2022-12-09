@@ -15,6 +15,9 @@ kubectl delete -f ingestion-deployment.yml
 echo ---------------- Removing web and api service ----------------
 kubectl delete svc web-service api-service
 
+echo ---------------- Deleting vmbc-sirato Namespace ----------------
+kubectl delete namespace sirato-explorer
+
 echo ---------------- Removing tmp files ----------------
 rm -rvf mongodb-deployment.yml web-deployment.yml api-deployment.yml ingestion-deployment.yml 
 
