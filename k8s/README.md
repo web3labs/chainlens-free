@@ -7,8 +7,10 @@ You can use the script contained in this directory to generate and run Sirato us
 If you are running locally, you should first start minikube, then run the following script:
 
 ```
-./sirato-launch.sh http//:<rpc-endpoint>
+./sirato-launch.sh http://<rpc-endpoint>:<port number> 
 ```
+
+Note: Port number is 8545 by default
 
 You can verify the status of Sirato by running:
 
