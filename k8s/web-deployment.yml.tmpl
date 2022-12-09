@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: sirato-web-deployment
+    run: sirato-web
   name: sirato-web-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: sirato-web-deployment
+      run: sirato-web
   strategy: {}
   template:
     metadata:
       labels:
-        run: sirato-web-deployment
+        run: sirato-web
     spec:
       containers:
         - name: sirato-web
