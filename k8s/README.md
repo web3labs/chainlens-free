@@ -16,8 +16,35 @@ You can verify the status of Sirato by running:
 kubectl get pods
 ```
 
-Once all pods are available you should be able to access Sirato via http://localhost
+Once all pods are available, proceed to the next step.
 
+## Start Proxy (If running local minikube)
+
+On macOS, ensure minikube ingress is enabled:
+
+```
+minikube addons enable ingress
+```
+
+'''
+minikube service sirato-proxy
+'''
+
+❯ minikube service sirato-proxy
+|-----------|--------------|-------------|---------------------------|
+| NAMESPACE |     NAME     | TARGET PORT |            URL            |
+|-----------|--------------|-------------|---------------------------|
+| default   | sirato-proxy |          80 | http://192.168.49.2:31969 |
+|-----------|--------------|-------------|---------------------------|
+🏃  Starting tunnel for service sirato-proxy.
+|-----------|--------------|-------------|------------------------|
+| NAMESPACE |     NAME     | TARGET PORT |          URL           |
+|-----------|--------------|-------------|------------------------|
+| default   | sirato-proxy |             | http://127.0.0.1:56439 |
+|-----------|--------------|-------------|------------------------|
+🎉  Opening service default/sirato-proxy in default browser...
+
+Point your browser to the provided URL.
 
 ## Stopping Sirato
 
