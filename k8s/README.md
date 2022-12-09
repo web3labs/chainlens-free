@@ -7,7 +7,7 @@ You can use the script contained in this directory to generate and run Sirato us
 If you are running locally, you should first start minikube, then run the following script:
 
 ```
-./sirato-deploy.sh <hostname>:<rpc-endpoint>
+./sirato-launch.sh <hostname>:<rpc-endpoint>
 ```
 
 You can verify the status of Sirato by running:
@@ -24,5 +24,5 @@ Once all pods are available you should be able to access Sirato via http://local
 To stop Sirato and cleanup all components, run:
 
 ```
-./sirato-remove.sh
+./sirato-destroy.sh
 ```
