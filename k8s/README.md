@@ -20,7 +20,7 @@ Once all pods are available, proceed to the next step.
 
 ## Start Proxy (If running local minikube)
 
-On macOS, ensure minikube ingress is enabled:
+Ensure minikube ingress is enabled:
 
 ```
 minikube addons enable ingress
