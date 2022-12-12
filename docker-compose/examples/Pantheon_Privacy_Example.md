@@ -1,6 +1,6 @@
 
 
-### Connecting Epirus to Pantheon-quickstart privacy node
+### Connecting Sirato to Pantheon-quickstart privacy node
 
 Get Pantheon Quickstart
 
@@ -17,7 +17,7 @@ You should see the following happening in the terminal window.
 
 
 
-#### Set up Epirus-Free
+#### Set up Sirato-Free
 
 ```
 git clone https://github.com/web3labs/sirato-free.git
@@ -41,7 +41,7 @@ The second file named docker-compose-pantheon contains the network settings requ
 
 You should see the following happening in the terminal window. This means that everything has started successfully.
 
-![img](images/EpirusPantheon.png)
+![img](images/SiratoPantheon.png)
 
 > Note: The logs are verbose and you will see various errors before all services are started. The important logs to look at are on the api. You can access them with the following
 > 
@@ -52,13 +52,13 @@ Navigate to [localhost](http://localhost) and you should see the loading page:
 
 ![image](images/Loading.png)
 
-After a few minutes Epirus should display the following information:
+After a few minutes Sirato should display the following information:
 
 ![img](../images/Blocks.png)
 
-Epirus has successfully connected to a Pantheon node and is ingesting data. Depending on your machine specs this can take a long time to get to this point (20 mins on a macbook air).
+Sirato has successfully connected to a Pantheon node and is ingesting data. Depending on your machine specs this can take a long time to get to this point (20 mins on a macbook air).
 
-To close Epirus you can execute the following line in your terminal:
+To close Sirato you can execute the following line in your terminal:
 
 `docker-compose down` 
 
@@ -72,7 +72,7 @@ To close Pantheon you can execute the following line in your terminal:
 
 #### Help & Additional Information
 
-For more information on Epirus you can go [here](https://github.com/web3labs/sirato-free).
+For more information on Sirato you can go [here](https://github.com/web3labs/sirato-free).
 
 For more information Pantheon-quickstart example you can go [here](https://github.com/PegaSysEng/pantheon-quickstart).
 
