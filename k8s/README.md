@@ -22,11 +22,13 @@ Once all pods are available, proceed to the next step.
 
 ## Start Proxy (If running local minikube)
 
-Ensure minikube ingress is enabled:
+Ensure minikube ingress is enabled, issuing the following command
 
 ```
 minikube addons enable ingress
 ```
+
+Start proxy service, issuing the following command
 
 ```
 minikube service sirato-proxy
