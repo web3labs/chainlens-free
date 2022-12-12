@@ -25,7 +25,7 @@ spec:
         - name: MONGO_CREATE_INDICES
           value: "true"
         - name: NODE_ENDPOINT
-          value: NODEENDPOINT
+          value: {{NODE_ENDPOINT}}
         - name: REINDEX_ENDPOINT
           value: http://sirato-ingestion/reindex
 ---
