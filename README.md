@@ -1,4 +1,6 @@
-# Blockchain Explorer for Besu, Quorum and Ethereum
+# Sirato
+
+Blockchain Explorer for Besu, Quorum, VMBC and Ethereum
 
 ![alt text](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Contracts.png "Epirus Free")
 
@@ -54,6 +56,10 @@ To connect to new network you should remove the volumes associated with the old 
 docker-compose down -v
 ```
 
+## VMware Blockchain (VMBC)
+
+Sirato supports [VMware Blockchain](https://vmware-samples.github.io/vmware-blockchain-samples/) platform. Follow this [guide](k8s/README.md) to start Sirato within VMWare Blockchain Kubernetes cluster,
+
 ## Quorum & Hyperledger Besu 
 
 To run the Quroum 7 node example with epirus free [follow these instructions](examples/Quorum_Example.md). 
@@ -66,7 +72,7 @@ To run the Pantheon-quickstart privacy network example [follow these instruction
 
 ![Tokens screen](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Tokens.png)
 
-This is a free version of our Epirus Blockchain Explorer. For additional features such as full tokens support, 
+This is a free version of our Sirato Blockchain Explorer. For additional features such as full tokens support, 
 and contract metadata upload (so all transaction and events are decoded), please use our offering available on the 
 [Azure Marketplace](https://web3labs.com/azure-offer).
 
