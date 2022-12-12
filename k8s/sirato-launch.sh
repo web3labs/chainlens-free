@@ -1,32 +1,26 @@
 #!/usr/bin/env bash
-set -e
+set -eu
 
-endpoint=""
+NAMESPACE="sirato-explorer"
+ENDPOINT=""
 
 if [ $# -eq 1 ]; then
   echo "Using endpoint: $1"
-  endpoint=$1
+  ENDPOINT=$1
 else
-  echo "Please specify a node endpoint"
+  echo "Usage: $0 <RPC_URL>"
+  echo "Example: $0 https://your.evm.net:8545/"
   exit 1
 fi
 
-NAMESPACE="sirato-explorer"
+kubectl create namespace $NAMESPACE
 
-kubectl create namespace ${NAMESPACE}
+kubectl create -n $NAMESPACE -f mongodb.yml
+sed "s|{{NODE_ENDPOINT}}|$ENDPOINT|g" ingestion.yml | kubectl create -n $NAMESPACE -f -
+sed "s|{{NODE_ENDPOINT}}|$ENDPOINT|g" api.yml | kubectl create -n $NAMESPACE -f -
+kubectl create -n $NAMESPACE -f web.yml,proxy.yml
 
-cp api-deployment.yml.tmpl api-deployment.yml
-cp ingestion-deployment.yml.tmpl ingestion-deployment.yml
-cp mongodb-deployment.yml.tmpl mongodb-deployment.yml
-cp web-deployment.yml.tmpl web-deployment.yml
-cp proxy.yml.tmpl proxy.yml
+kubectl get pods -n $NAMESPACE
+kubectl get svc -n $NAMESPACE
 
-if [ "$ARCH" == "Darwin" ]; then
-  sed -i '' "s|NODEENDPOINT|$endpoint|g" "ingestion-deployment.yml"
-  sed -i '' "s|NODEENDPOINT|$endpoint|g" "api-deployment.yml"
-else
-  sed -i "s|NODEENDPOINT|$endpoint|g" "ingestion-deployment.yml"
-  sed -i "s|NODEENDPOINT|$endpoint|g" "api-deployment.yml"
-fi
-
-kubectl create -f mongodb-deployment.yml,api-deployment.yml,ingestion-deployment.yml,web-deployment.yml,proxy.yml
+echo -e "\n🎉 If you are in Minikube you can run 'minikube service sirato-proxy -n ${NAMESPACE}' to get an ingress URL"

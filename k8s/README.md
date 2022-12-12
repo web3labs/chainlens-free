@@ -29,9 +29,10 @@ minikube addons enable ingress
 ```
 
 ```
-'''
 minikube service sirato-proxy
-'''
+```
+
+```
 ❯ minikube service sirato-proxy
 |-----------|--------------|-------------|---------------------------|
 | NAMESPACE |     NAME     | TARGET PORT |            URL            |
@@ -46,6 +47,7 @@ minikube service sirato-proxy
 |-----------|--------------|-------------|------------------------|
 🎉  Opening service default/sirato-proxy in default browser...
 ```
+
 Point your browser to the provided URL.
 
 ## Stopping Sirato
