@@ -22,7 +22,7 @@ spec:
             - name: MONGO_DB_NAME
               value: epirus
             - name: NODE_ENDPOINT
-              value: NODEENDPOINT
+              value: {{NODE_ENDPOINT}}
           image: web3labs/epirus-free-ingestion:latest
           name: ingestion
           resources: {}
