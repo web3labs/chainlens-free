@@ -1,99 +1,50 @@
 # Sirato
 
-Blockchain Explorer for Besu, Quorum, VMBC and Ethereum
+Blockchain Explorer for Besu, Quorum, VMWare Blockchain and Ethereum compatible blockchains
 
-![alt text](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Contracts.png "Epirus Free")
+![alt text](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/sirato-dashboard.png "Sirato dashboard")
 
 ## Introduction
 
-This dockerized environment is designed for viewing public and private Ethereum networks. It supports  
-[Quorum](https://github.com/ConsenSys/quorum), [Hyperledger Besu](https://besu.hyperledger.org/en/stable/) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
+Sirato is a data and analytics platform for Ethereum compatible blockchains.
 
-Instructions for Docker are below, instructions for Kubernetes are available [here](k8s/README.md).
+It provides a rich API, and easy to use interface to provide information on the various assets such as tokens, and smart contracts deployed on blockchains.
 
-## Usage
+A free developer edition is available in this repo, we also provide hosted plans for it. They are outlined below.
 
-Clone the repo, navigate to the cloned directory and run the instance with:
+## Free plan
 
-```bash
-docker-compose pull
-NODE_ENDPOINT=http://<node_endpoint> docker-compose up
-```
+This distribution of Sirato is a free version designed for viewing public and private Ethereum networks. It supports  
+[Quorum](https://github.com/ConsenSys/quorum), [Hyperledger Besu](https://besu.hyperledger.org/en/stable/), [VMWare Blockchain for Ethereum](https://www.vmware.com/products/blockchain.html) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
 
-Note that if setting `NODE_ENDPOINT` to a local Ethereum instance, you may need to use the IP address associated with the Docker bridged interface. 
+![alt text](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/sirato-free.png "Sirato free")
 
-On Linux, the bridged adapter should be 172.16.239.1, as denoted in docker-compose.yml. To connect to a local node, start with the command:
+## Hosted plans
 
-```bash
-NODE_ENDPOINT=http://172.16.239.1:8545 docker-compose up
-```
+Web3 Labs provides hosted plans that provides additional functionality including:
 
-On MacOS and Windows, a platform sepcific command is required due to limitations around the Docker network stack on MacOS. This is as follows: 
+- Custom branding and hosting at a custom domain
+- Dedicated views of tokens
+- Smart contract management and source code upload
+- OpenAPI back-end
+- Integrations with business intelligence tools such as Tableau Microsoft PowerBI and Qlik
+- Production SLAs
+- Large transaction volumes (100,000,000+)
 
-```bash
-NODE_ENDPOINT=http://host.docker.internal:8545 docker-compose up
-```
+![alt text](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/palm-verified-sourcecode.png "Sirato customer instance Palm with verified source code")
 
-Note that in both cases, your local instance of geth must be started with `--rpcaddr 0.0.0.0` and `--rpcvhosts="*"`, or Epirus will be unable to access it.
+The advantage of the hosted plan is that all you need to provide is a compatible web3 client endpoint and we will do the rest.
 
-Also note that on Windows Epirus may take a long time to come up (sometimes up to 20 minutes) due to Windows filesystem performance issues with Linux VMs.
+You can view more information on these plans [here](https://www.web3labs.com/blockchain-explorer-sirato-plans), or contact Web3 Labs directly via [hi@web3labs.com](mailto:hi@web3labs.com?subject=Sirato%20hosted%20plans).
 
-Append the `-d` argument to run the containers in the backgroud
+### Deployment instructions
 
-You will be able to access the Explorer UI via:
+This repo contains configuration to run the free version using either Docker Compose or Kubernetes.
 
-* http://localhost/
+Follow the appropriate guide to run Sirato locally against an Ethereum, Quorum, Hyperledger Besu, or VMBC compatible network.
 
-To stop the containers use:
-
-```bash
-docker-compose down
-```
-
-To connect to new network you should remove the volumes associated with the old network
-
-```bash
-docker-compose down -v
-```
-
-## VMware Blockchain (VMBC)
-
-Sirato supports [VMware Blockchain](https://vmware-samples.github.io/vmware-blockchain-samples/) platform. Follow this [guide](k8s/README.md) to start Sirato within VMWare Blockchain Kubernetes cluster,
-
-## Quorum & Hyperledger Besu 
-
-To run the Quroum 7 node example with epirus free [follow these instructions](examples/Quorum_Example.md). 
-
-
-To run the Pantheon-quickstart privacy network example [follow these instructions](examples/Pantheon_Privacy_Example.md).
-
-
-## Tokens and contract metadata
-
-![Tokens screen](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Tokens.png)
-
-This is a free version of our Sirato Blockchain Explorer. For additional features such as full tokens support, 
-and contract metadata upload (so all transaction and events are decoded), please use our offering available on the 
-[Azure Marketplace](https://web3labs.com/azure-offer).
-
-![Azure offering](https://raw.githubusercontent.com/blk-io/epirus-free/master/images/Azure-offer.png)
-
-We can also provide hosted Blockchain Explorer instances - these can be hosted within your cloud subscription or hosted by us.
-
-Some of the features include:
-
-- SSO authentication (Active Directory, SAML, Okta, etc)
-- Dedicated database
-- Data encryption at rest and in transit
-- Continuous backup and point in time data recovery
-- Full access to backups
-- Tableau integration support 
-
-For further information visit our [website](https://www.web3labs.com) or email <support@web3labs.com>.
-
-## Limitations
-
- - Due to a [limitation](https://github.com/moby/moby/issues/1143) with Docker, you may only have one instance of the Explorer running at a time.
+- [Docker Compose deployment](docker-compose/README.md)
+- [Kubernetes deployment](k8s/README.md)
 
 ## License
 
