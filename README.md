@@ -2,7 +2,7 @@
 
 Blockchain Explorer for Besu, Quorum, VMWare Blockchain and Ethereum compatible blockchains
 
-![alt text](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/sirato-dashboard.png "Sirato dashboard")
+![Sirato Dashboard](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/sirato-dashboard.png "Sirato dashboard")
 
 ## Introduction
 
@@ -17,7 +17,7 @@ A free developer edition is available in this repo, we also provide hosted plans
 This distribution of Sirato is a free version designed for viewing public and private Ethereum networks. It supports  
 [Quorum](https://github.com/ConsenSys/quorum), [Hyperledger Besu](https://besu.hyperledger.org/en/stable/), [VMWare Blockchain for Ethereum](https://www.vmware.com/products/blockchain.html) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
 
-![alt text](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/sirato-free.png "Sirato free")
+![Sirato Free Screenshot](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/sirato-free.png "Sirato free")
 
 ## Hosted plans
 
@@ -31,7 +31,7 @@ Web3 Labs provides hosted plans that provides additional functionality including
 - Production SLAs
 - Large transaction volumes (100,000,000+)
 
-![alt text](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/palm-verified-sourcecode.png "Sirato customer instance Palm with verified source code")
+![Sirato Hosted Screenshot](https://raw.githubusercontent.com/web3labs/sirato-free/master/images/sirato-hosted.png "Sirato customer instance Palm with verified source code")
 
 The advantage of the hosted plan is that all you need to provide is a compatible web3 client endpoint and we will do the rest.
 
