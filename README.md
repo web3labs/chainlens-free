@@ -1,6 +1,6 @@
 # Sirato
 
-Blockchain Explorer for Besu, Quorum, VMWare Blockchain and Ethereum compatible blockchains
+Blockchain Explorer for Besu, Quorum, VMware Blockchain and Ethereum compatible blockchains
 
 ![Sirato Dashboard](https://raw.githubusercontent.com/web3labs/sirato-free/master/_images/sirato-dashboard.png "Sirato dashboard")
 
@@ -15,7 +15,7 @@ A free developer edition is available in this repo, we also provide hosted plans
 ## Free plan
 
 This distribution of Sirato is a free version designed for viewing public and private Ethereum networks. It supports  
-[Quorum](https://github.com/ConsenSys/quorum), [Hyperledger Besu](https://besu.hyperledger.org/en/stable/), [VMWare Blockchain for Ethereum](https://www.vmware.com/products/blockchain.html) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
+[Quorum](https://github.com/ConsenSys/quorum), [Hyperledger Besu](https://besu.hyperledger.org/en/stable/), [VMware Blockchain for Ethereum](https://www.vmware.com/products/blockchain.html) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
 
 ![Sirato Free Screenshot](https://raw.githubusercontent.com/web3labs/sirato-free/master/_images/sirato-free.png "Sirato free")
 
