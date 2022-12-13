@@ -46,6 +46,8 @@ Follow the appropriate guide to run Sirato locally against an Ethereum, Quorum, 
 - [Docker Compose deployment](docker-compose/README.md)
 - [Kubernetes deployment](k8s/README.md)
 
+Minimum requirements: 8GB RAM, 2 x cpu, At least 20GB disk storage, assuming the blockchain is 15GB or less.
+
 ## License
 
 Sirato is free for non-commercial use and evaluation purposes only, for further details refer to the [LICENSE](LICENSE). To speak to use about commercial use you can email us via `hi <at> web3labs.com` or submit an enquiry [here](https://pages.web3labs.com/sirato-enterprise).
