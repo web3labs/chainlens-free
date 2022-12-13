@@ -46,7 +46,13 @@ Follow the appropriate guide to run Sirato locally against an Ethereum, Quorum, 
 - [Docker Compose deployment](docker-compose/README.md)
 - [Kubernetes deployment](k8s/README.md)
 
-Minimum requirements: 8GB RAM, 2 x cpu, At least 20GB disk storage, assuming the blockchain is 15GB or less.
+### System Requirements
+
+| Components | Description |
+|-----------|-------------|
+|  CPUs             | 2 CPU |
+|  Memory           | 16 GB |
+|  Disk Size        | 20 GB or more if blockchain > 10GB |
 
 ## License
 
