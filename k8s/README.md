@@ -52,6 +52,10 @@ minikube service sirato-proxy
 
 Point your browser to the provided URL.
 
+**Note** it can take a while for the Sirato dashboard to appear (5-10 minutes). Please refresh your page if you encounter an Nginx error page.
+
+![Sirato Free Dashboard](https://raw.githubusercontent.com/web3labs/sirato-free/master/_images/sirato-free-dashboard.png "Sirato free dashboard")
+
 ## Stopping Sirato
 
 To stop Sirato and cleanup all components, run:
