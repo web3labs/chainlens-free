@@ -15,7 +15,7 @@ Note: Port number is 8545 by default
 You can verify the status of Sirato by running:
 
 ```
-kubectl get pods
+kubectl get pods -n sirato-explorer
 ```
 
 Once all pods are available, proceed to the next step.
@@ -31,7 +31,7 @@ minikube addons enable ingress
 Start proxy service, issuing the following command
 
 ```
-minikube service sirato-proxy
+minikube service sirato-proxy -n sirato-explorer
 ```
 
 ```
