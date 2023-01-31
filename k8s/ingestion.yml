@@ -24,7 +24,7 @@ spec:
             - name: NODE_ENDPOINT
               value: {{NODE_ENDPOINT}}
             - name: DISPATCH_RATE
-              value: {{DISPATCH_RATE}}
+              value: "{{DISPATCH_RATE}}"
           image: web3labs/epirus-free-ingestion:latest
           name: ingestion
           resources: {}
