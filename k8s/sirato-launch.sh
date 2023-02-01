@@ -3,20 +3,33 @@ set -eu
 
 NAMESPACE="sirato-explorer"
 ENDPOINT=""
+DISPATCH_RATE="10"
 
-if [ $# -eq 1 ]; then
-  echo "Using endpoint: $1"
-  ENDPOINT=$1
-else
-  echo "Usage: $0 <RPC_URL>"
+function usage() {
+  if [ -n "$1" ]; then echo -e "\033[0;31m$1\033[0m\n"; fi;
+  echo -e "Usage: $0 [-r millis] rpc_url"
+  echo -e "  -r, --dispatch-rate\tThe ingestion rate in milliseconds (default 10 ms)"
+  echo -e "  rpc_url\t\tThe RPC endpoint URL"
+  echo ""
   echo "Example: $0 https://your.evm.net:8545/"
   exit 1
-fi
+}
+
+if [ "$#" -lt 1 ]; then usage ""; fi;
+
+while [[ "$#" > 0 ]]; do case $1 in
+  -r|--dispatch-rate) DISPATCH_RATE="$2";shift;shift;;
+  -*|--*) usage "Unknown parameter: $1";shift;;
+  *) ENDPOINT="$1";shift;;
+esac; done
+
+if [ -z "$ENDPOINT" ]; then usage "Endpoint is not set"; fi;
+if [ -z "$DISPATCH_RATE" ]; then usage "Dispatch rate is not set"; fi;
 
 kubectl create namespace $NAMESPACE
 
 kubectl create -n $NAMESPACE -f mongodb.yml
-sed "s|{{NODE_ENDPOINT}}|$ENDPOINT|g" ingestion.yml | kubectl create -n $NAMESPACE -f -
+sed -e "s|{{NODE_ENDPOINT}}|$ENDPOINT|g" -e "s|{{DISPATCH_RATE}}|$DISPATCH_RATE|g" ingestion.yml | kubectl create -n $NAMESPACE -f -
 sed "s|{{NODE_ENDPOINT}}|$ENDPOINT|g" api.yml | kubectl create -n $NAMESPACE -f -
 kubectl create -n $NAMESPACE -f web.yml,proxy.yml
 
