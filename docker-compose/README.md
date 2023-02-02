@@ -7,6 +7,11 @@ cd docker-compose
 docker-compose pull
 NODE_ENDPOINT=http://<node_endpoint> docker-compose up
 ```
+The explorer runs on port `80` by default, if you want to use a custom port e.g 26000, set the `PORT` environment variable and the explorer will be accessible via http://localhost:26000.
+
+```bash
+NODE_ENDPOINT=http://<host_endpoint> PORT=26000 docker-compose up
+```
 
 Note that if setting `NODE_ENDPOINT` to a local Ethereum instance, you may need to use the IP address associated with the Docker bridged interface. 
 
