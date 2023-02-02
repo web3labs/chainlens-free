@@ -48,11 +48,13 @@ Follow the appropriate guide to run Sirato locally against an Ethereum, Quorum, 
 
 ### System Requirements
 
+Recommended minimum system requirements.
+
 | Components | Description |
 |-----------|-------------|
-|  CPUs             | 2 CPU |
-|  Memory           | 16 GB |
-|  Disk Size        | 20 GB or more if blockchain > 10GB |
+|  CPUs        | 1 CPU |
+|  Memory      | 8 GB |
+|  Disk        | Proportional to the blockchain size |
 
 ## License
 
