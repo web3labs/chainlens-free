@@ -3,7 +3,7 @@ set -eu
 
 NAMESPACE="sirato-explorer"
 ENDPOINT=""
-DISPATCH_RATE="10"
+DISPATCHER_RATE="10"
 
 function usage() {
   if [ -n "$1" ]; then echo -e "\033[0;31m$1\033[0m\n"; fi;
@@ -18,18 +18,18 @@ function usage() {
 if [ "$#" -lt 1 ]; then usage ""; fi;
 
 while [[ "$#" > 0 ]]; do case $1 in
-  -r|--dispatch-rate) DISPATCH_RATE="$2";shift;shift;;
+  -r|--dispatch-rate) DISPATCHER_RATE="$2";shift;shift;;
   -*|--*) usage "Unknown parameter: $1";shift;;
   *) ENDPOINT="$1";shift;;
 esac; done
 
 if [ -z "$ENDPOINT" ]; then usage "Endpoint is not set"; fi;
-if [ -z "$DISPATCH_RATE" ]; then usage "Dispatch rate is not set"; fi;
+if [ -z "$DISPATCHER_RATE" ]; then usage "Dispatch rate is not set"; fi;
 
 kubectl create namespace $NAMESPACE
 
 kubectl create -n $NAMESPACE -f mongodb.yml
-sed -e "s|{{NODE_ENDPOINT}}|$ENDPOINT|g" -e "s|{{DISPATCH_RATE}}|$DISPATCH_RATE|g" ingestion.yml | kubectl create -n $NAMESPACE -f -
+sed -e "s|{{NODE_ENDPOINT}}|$ENDPOINT|g" -e "s|{{DISPATCHER_RATE}}|$DISPATCHER_RATE|g" ingestion.yml | kubectl create -n $NAMESPACE -f -
 sed "s|{{NODE_ENDPOINT}}|$ENDPOINT|g" api.yml | kubectl create -n $NAMESPACE -f -
 kubectl create -n $NAMESPACE -f web.yml,proxy.yml
 
