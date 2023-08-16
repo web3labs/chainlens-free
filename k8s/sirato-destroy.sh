@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eu
 
-kubectl delete --all deployments -n sirato-explorer
-kubectl delete --all services -n sirato-explorer
-kubectl delete namespace sirato-explorer
+kubectl delete --all deployments -n chainlens-explorer
+kubectl delete --all services -n chainlens-explorer
+kubectl delete namespace chainlens-explorer

@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: sirato-ingestion
-  name: sirato-ingestion
+    run: chainlens-ingestion
+  name: chainlens-ingestion
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: sirato-ingestion
+      run: chainlens-ingestion
   strategy: {}
   template:
     metadata:
       labels:
-        run: sirato-ingestion
+        run: chainlens-ingestion
     spec:
       containers:
         - env:
             - name: MONGO_CLIENT_URI
-              value: mongodb://sirato-db:27017
+              value: mongodb://chainlens-db:27017
             - name: MONGO_DB_NAME
               value: epirus
             - name: NODE_ENDPOINT

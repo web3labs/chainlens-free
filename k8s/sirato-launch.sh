@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 
-NAMESPACE="sirato-explorer"
+NAMESPACE="chainlens-explorer"
 ENDPOINT=""
 DISPATCHER_RATE="10"
 
@@ -36,4 +36,4 @@ kubectl create -n $NAMESPACE -f web.yml,proxy.yml
 kubectl get pods -n $NAMESPACE
 kubectl get svc -n $NAMESPACE
 
-echo -e "\n🎉 If you are in Minikube you can run 'minikube service sirato-proxy -n ${NAMESPACE}' to get an ingress URL"
+echo -e "\n🎉 If you are in Minikube you can run 'minikube service chainlens-proxy -n ${NAMESPACE}' to get an ingress URL"

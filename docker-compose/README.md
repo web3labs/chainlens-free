@@ -29,7 +29,7 @@ NODE_ENDPOINT=http://host.docker.internal:8545 docker-compose up
 
 Note that in both cases, your local instance of geth must be started with `--rpcaddr 0.0.0.0` and `--rpcvhosts="*"`, or Sirato will be unable to access it.
 
-Also note that on Windows Sirato may take a long time to come up (sometimes up to 20 minutes) due to Windows filesystem performance issues with Linux VMs.
+Also note that on Windows Chainlens may take a long time to come up (sometimes up to 20 minutes) due to Windows filesystem performance issues with Linux VMs.
 
 Append the `-d` argument to run the containers in the backgroud
 
@@ -51,7 +51,7 @@ docker-compose down -v
 
 ## Quorum & Hyperledger Besu 
 
-To run the Quroum 7 node example with sirato free [follow these instructions](examples/Quorum_Example.md). 
+To run the Quroum 7 node example with Chainlens free [follow these instructions](examples/Quorum_Example.md). 
 
 To run the Pantheon-quickstart privacy network example [follow these instructions](examples/Pantheon_Privacy_Example.md).
 

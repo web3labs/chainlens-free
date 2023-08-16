@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sirato-db-deployment
+  name: chainlens-db-deployment
 spec:
   selector:
     matchLabels:
-      run: sirato-db
+      run: chainlens-db
   replicas: 1
   template:
     metadata:
       labels:
-        run: sirato-db
+        run: chainlens-db
     spec:
       containers:
-      - name: sirato-db
+      - name: chainlens-db
         image: mongo:5.0.8
         ports:
         - containerPort: 27017
@@ -21,12 +21,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sirato-db
+  name: chainlens-db
   labels:
-    run: sirato-db
+    run: chainlens-db
 spec:
   ports:
   - port: 27017
     protocol: TCP
   selector:
-    run: sirato-db
+    run: chainlens-db

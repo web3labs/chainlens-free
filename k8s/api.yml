@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sirato-api-deployment
+  name: chainlens-api-deployment
 spec:
   selector:
     matchLabels:
-      run: sirato-api
+      run: chainlens-api
   replicas: 1
   template:
     metadata:
       labels:
-        run: sirato-api
+        run: chainlens-api
     spec:
       containers:
-      - name: sirato-api
+      - name: chainlens-api
         image: web3labs/epirus-free-api:latest
         ports:
         - containerPort: 8090
         env:
         - name: MONGO_CLIENT_URI
-          value: mongodb://sirato-db:27017
+          value: mongodb://chainlens-db:27017
         - name: MONGO_DB_NAME
           value: "epirus"
         - name: MONGO_CREATE_INDICES
@@ -27,17 +27,17 @@ spec:
         - name: NODE_ENDPOINT
           value: {{NODE_ENDPOINT}}
         - name: REINDEX_ENDPOINT
-          value: http://sirato-ingestion/reindex
+          value: http://chainlens-ingestion/reindex
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: sirato-api
+  name: chainlens-api
   labels:
-    run: sirato-api
+    run: chainlens-api
 spec:
   ports:
   - port: 8090
     protocol: TCP
   selector:
-    run: sirato-api
+    run: chainlens-api
