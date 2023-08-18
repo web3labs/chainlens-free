@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: sirato-web
-  name: sirato-web-deployment
+    run: chainlens-web
+  name: chainlens-web-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: sirato-web
+      run: chainlens-web
   strategy: {}
   template:
     metadata:
       labels:
-        run: sirato-web
+        run: chainlens-web
     spec:
       containers:
-        - name: sirato-web
+        - name: chainlens-web
           env:
             - name: API_URL
               value: /api
@@ -29,12 +29,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sirato-web
+  name: chainlens-web
   labels:
-    run: sirato-web
+    run: chainlens-web
 spec:
   ports:
   - port: 3000
     protocol: TCP
   selector:
-    run: sirato-web
+    run: chainlens-web

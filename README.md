@@ -2,7 +2,7 @@
 
 Blockchain Explorer for Besu, Quorum and Ethereum-compatible blockchains
 
-![Sirato Dashboard](https://raw.githubusercontent.com/web3labs/sirato-free/master/_images/sirato-dashboard.png "Sirato dashboard")
+![Chainlens Dashboard](./_images/chainlens-dashboard.png "Chainlens dashboard")
 
 ## Introduction
 
@@ -17,7 +17,7 @@ A free developer edition is available in this repo, we also provide hosted plans
 This distribution of Chainlens is a free version designed for viewing public and private Ethereum networks. It supports  
 [Quorum](https://github.com/ConsenSys/quorum), [Hyperledger Besu](https://besu.hyperledger.org/en/stable/) and [Ethereum](https://github.com/ethereum/go-ethereum) networks.
 
-![Sirato Free Screenshot](https://raw.githubusercontent.com/web3labs/sirato-free/master/_images/sirato-free.png "Sirato free")
+![Chainlens Free Screenshot](./_images/chainlens-free.png "Chainlens free")
 
 ## Hosted plans
 
@@ -31,9 +31,9 @@ Web3 Labs provides hosted plans that provide additional functionality including:
 - Production SLAs
 - Large transaction volumes (100,000,000+)
 
-![Sirato Hosted Screenshot](https://raw.githubusercontent.com/web3labs/sirato-free/master/_images/sirato-hosted.png "Sirato customer instance Palm with verified source code")
+![Chainlens Hosted Screenshot](./_images/chainlens-hosted.png "Chainlens customer instance Palm with verified source code")
 
-The advantage of the hosted plan is that all you need to provide is a compatible web3 client endpoint and we will do the rest.
+The advantage of the hosted plan is that all you need to provide is a compatible web3 client endpoint, and we will do the rest.
 
 You can view more information on these plans [here](https://chainlens.com), or contact Web3 Labs directly via [hi@web3labs.com](mailto:hi@web3labs.com?subject=Chainlens%20hosted%20plans).
 
