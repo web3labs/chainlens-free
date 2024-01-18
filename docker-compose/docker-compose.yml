@@ -48,8 +48,10 @@ services:
       - NODE_ENDPOINT=${NODE_ENDPOINT}
       - MONGO_CLIENT_URI=mongodb://mongodb:27017
       - MONGO_DB_NAME=epirus
+      - LIST_OF_METRICS_TO_CALCULATE_PER_MINUTE=hourly,daily,monthly,yearly
     depends_on:
       - mongodb
+      - redis
     networks:
       - epirus
       
