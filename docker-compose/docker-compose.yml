@@ -36,7 +36,7 @@ services:
     image: web3labs/epirus-free-web:latest
     environment:
       - API_URL=/api
-      - WS_API_URL=http://localhost:8090
+      - WS_API_URL=ws://localhost:8090
       - DISPLAY_NETWORK_TAB=disabled
     depends_on:
       - api
