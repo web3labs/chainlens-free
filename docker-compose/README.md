@@ -53,7 +53,7 @@ docker-compose down -v
 
 To run the Quroum 7 node example with Chainlens free [follow these instructions](examples/Quorum_Example.md). 
 
-To run the Pantheon-quickstart privacy network example [follow these instructions](examples/Pantheon_Privacy_Example.md).
+To run the Besu example [follow these instructions](examples/Besu_Example.md).
 
 ## Limitations
 
